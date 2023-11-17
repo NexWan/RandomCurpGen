@@ -18,7 +18,7 @@ int main() {
 
 	random_device rd;
 	mt19937 gen(rd());
-	uniform_int_distribution<int> distribution(10, 99);
+	uniform_int_distribution<int> distribution(0,9);
 
 	cout << "------------------ NOMBRE ----------------\n";
 	getline(cin,name);
@@ -55,7 +55,8 @@ int main() {
 		curp += consonante(lastNameF);
 		curp += consonante(lastNameM);
 		curp += consonante(name);
-		curp += distribution(gen) - '0';
+		curp += distribution(gen) + '0';
+		curp += distribution(gen) + '0';
 		break;
 	}
 	cout << curp;
